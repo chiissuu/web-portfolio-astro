@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import Projects from "../components/Projects.astro";
+import Skills from "../components/Skills.astro";
+import Education from "../components/Education.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<BaseLayout>
+  <Navbar />
+  <Hero />
+
+  <main>
+    <About />
+    <Projects />
+    <Skills />
+    <Education />
+    <Contact />
+  </main>
+
+  <Footer />
+</BaseLayout>

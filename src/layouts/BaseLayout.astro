@@ -1,0 +1,26 @@
+---
+import "../styles/global.css";
+
+const {
+  title = "chiissuu",
+  description = "Portfolio web de Jesús, estudiante de Ingeniería del Software enfocado en desarrollo full-stack, Data Science y diseño visual."
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+
+    <title>{title}</title>
+    <link rel="icon" href={`${import.meta.env.BASE_URL}/assets/icons/logo-chiissuu.png`} type="image/png" />
+  </head>
+
+  <body>
+    <slot />
+
+    <script is:inline src={`${import.meta.env.BASE_URL}/js/main.js`}></script>
+  </body>
+</html>
