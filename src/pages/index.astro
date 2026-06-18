@@ -8,11 +8,17 @@ import Skills from "../components/Skills.astro";
 import Education from "../components/Education.astro";
 import Contact from "../components/Contact.astro";
 import Footer from "../components/Footer.astro";
+import HeroScrollMotion from "../components/react/HeroScrollMotion.jsx";
+import NavbarScrollController from "../components/react/NavbarScrollController.jsx";
 ---
 
 <BaseLayout>
   <Navbar />
-  <Hero />
+  <NavbarScrollController client:load />
+
+  <HeroScrollMotion client:load>
+    <Hero />
+  </HeroScrollMotion>
 
   <main>
     <About />
