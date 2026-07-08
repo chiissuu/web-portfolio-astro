@@ -1,104 +1,38 @@
+---
+const { t } = Astro.props;
+const [firstLink, secondLink, thirdLink] = t.about.competitive.links;
+---
+
 <section id="sobre-mi" class="section section-light">
-    <h2 class="section-title">Sobre mí</h2>
+  <h2 class="section-title">{t.about.title}</h2>
 
-    <div class="two-columns">
+  <div class="two-columns">
+    {t.about.cards.map((card) => (
+      <article class="text-card">
+        <h3>{card.title}</h3>
 
-        <article class="text-card">
-        <h3>Perfil</h3>
+        {card.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
 
-        <p>
-            Soy estudiante de Ingeniería del Software en U-TAD. Durante mi
-            formación he trabajado con programación, desarrollo web, bases de
-            datos, arquitectura de software y proyectos full-stack.
-        </p>
+        {card.link && (
+          <a class="text-link" href={card.link.href} target="_blank" rel="noopener noreferrer">
+            {card.link.text}
+          </a>
+        )}
+      </article>
+    ))}
 
-        <p>
-            Actualmente estoy orientando mi perfil hacia Data Science y Machine
-            Learning, usando mi base técnica para construir soluciones más
-            analíticas, útiles y escalables.
-        </p>
-        </article>
+    <article class="text-card">
+      <h3>{t.about.competitive.title}</h3>
 
-        <article class="text-card">
-        <h3>Lo que me diferencia</h3>
+      <p>
+        {t.about.competitive.intro}{" "}
+        <a class="text-link-inline" href={firstLink.href} target="_blank" rel="noopener noreferrer">{firstLink.text}</a>,{" "}
+        <a class="text-link-inline" href={secondLink.href} target="_blank" rel="noopener noreferrer">{secondLink.text}</a>,{" "}
+        <a class="text-link-inline" href={thirdLink.href} target="_blank" rel="noopener noreferrer">{thirdLink.text}</a>{" "}
+        {t.about.competitive.outro}
+      </p>
 
-        <p>
-            Además de la parte técnica, tengo experiencia en diseño gráfico,
-            creación de banners, portadas, thumbnails y recursos visuales para
-            proyectos personales.
-        </p>
-
-        <p>
-            También vengo de entornos competitivos como los esports, donde
-            desarrollé disciplina, comunicación, consistencia y adaptación bajo
-            presión.
-        </p>
-        </article>
-
-        <article class="text-card">
-        <h3>Diseño gráfico y creatividad</h3>
-
-        <p>
-            Además de mi formación técnica, tengo experiencia creando banners,
-            portadas, thumbnails, flyers y recursos visuales para proyectos
-            personales y contenido digital. Esta parte creativa influye en mi forma
-            de entender interfaces, identidad visual y comunicación.
-        </p>
-
-        <a
-            class="text-link"
-            href="https://drive.google.com/drive/folders/1e5ltPjqbFB5bYeWJhEbrtPfGYHE3329-?usp=sharing"
-            target="_blank"
-        >
-            Ver archivo de diseño gráfico
-        </a>
-        </article>
-
-        <article class="text-card">
-        <h3>Competitividad y mentalidad</h3>
-
-        <p>
-            Una parte importante de mi forma de trabajar viene de mi experiencia
-            compitiendo en esports como Overwatch, Counter-Strike,
-            <a
-            class="text-link-inline"
-            href="https://fortnitetracker.com/profile/kbm/Rayo%20Vallecano%209/events?region=GLOBAL&sortBy=placement"
-            target="_blank"
-            rel="noopener noreferrer"
-            >
-            Fortnite PC
-            </a>,
-            <a
-            class="text-link-inline"
-            href="https://fortnitetracker.com/profile/gamepad/Rayo%20Vallecano%209/events?region=GLOBAL&sortBy=pr"
-            target="_blank"
-            rel="noopener noreferrer"
-            >
-            Fortnite Console
-            </a>,
-            <a
-            class="text-link-inline"
-            href="https://github.com/chiissuu/chiissuu/blob/main/assets/merget1s4.jpg"
-            target="_blank"
-            rel="noopener noreferrer"
-            >
-            Clash Royale
-            </a>
-            y otros títulos competitivos.
-        </p>
-
-        <p>
-            Esta etapa me ayudó a desarrollar disciplina, constancia, control
-            emocional, comunicación en equipo y capacidad de adaptación en
-            situaciones de presión.
-        </p>
-
-        <p>
-            Intento aplicar esa mentalidad a mis proyectos: mejorar de forma
-            continua, cuidar los detalles, aceptar feedback y contribuir a un
-            entorno de equipo donde todos puedan rendir mejor.
-        </p>
-        </article>
-
-    </div>
-    </section>
+      {t.about.competitive.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+    </article>
+  </div>
+</section>

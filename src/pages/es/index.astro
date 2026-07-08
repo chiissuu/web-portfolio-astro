@@ -1,0 +1,36 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Hero from "../../components/Hero.astro";
+import About from "../../components/About.astro";
+import Projects from "../../components/Projects.astro";
+import Skills from "../../components/Skills.astro";
+import Education from "../../components/Education.astro";
+import Contact from "../../components/Contact.astro";
+import Footer from "../../components/Footer.astro";
+import HeroScrollMotion from "../../components/react/HeroScrollMotion.jsx";
+import NavbarScrollController from "../../components/react/NavbarScrollController.jsx";
+import { translations } from "../../i18n/translations.js";
+
+const lang = "es";
+const t = translations[lang];
+---
+
+<BaseLayout lang={lang} title={t.seo.home.title} description={t.seo.home.description} page="home">
+  <Navbar lang={lang} t={t} page="home" />
+  <NavbarScrollController client:load />
+
+  <HeroScrollMotion client:load>
+    <Hero t={t} />
+  </HeroScrollMotion>
+
+  <main>
+    <About t={t} />
+    <Projects t={t} />
+    <Skills t={t} />
+    <Education t={t} />
+    <Contact t={t} />
+  </main>
+
+  <Footer t={t} />
+</BaseLayout>

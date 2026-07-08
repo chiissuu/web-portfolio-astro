@@ -1,4 +1,8 @@
+---
+const { t } = Astro.props;
+---
+
 <footer class="footer">
-    <p>© 2026 Jesús León Romero Atienza · chiissuu</p>
-    <button id="botonarriba">Volver arriba</button>
-  </footer>
+  <p>{t.footer.text}</p>
+  <button id="botonarriba">{t.footer.backToTop}</button>
+</footer>

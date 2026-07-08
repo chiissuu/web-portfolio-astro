@@ -1,0 +1,43 @@
+---
+const { t } = Astro.props;
+---
+
+<main>
+  <section class="section section-light page-hero">
+    <p class="page-eyebrow">{t.toolsPage.eyebrow}</p>
+    <h1 class="section-title">{t.toolsPage.title}</h1>
+    <p class="section-intro">{t.toolsPage.intro}</p>
+  </section>
+
+  <section class="section section-light page-section-tight">
+    <div class="feature-grid">
+      {t.toolsPage.sections.map((section) => (
+        <article class="text-card">
+          <h2>{section.title}</h2>
+          <p>{section.text}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section section-light page-section-tight">
+    <h2 class="section-title">{t.skills.title}</h2>
+
+    <div class="skills-grid">
+      {t.skills.groups.map((group) => (
+        <article class="skill-card">
+          <h3>{group.title}</h3>
+
+          <div class="skill-list">
+            {group.items.map(([name, icon]) => (
+              <div class="skill-item">
+                <img src={`${import.meta.env.BASE_URL}/assets/skills/${icon}`} alt={`${name} logo`}>
+                <span>{name}</span>
+              </div>
+            ))}
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</main>

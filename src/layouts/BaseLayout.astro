@@ -1,20 +1,41 @@
 ---
 import "../styles/global.css";
+import { languages, pathMap } from "../i18n/translations.js";
 
 const {
+  lang = "es",
   title = "chiissuu",
-  description = "Portfolio web de Jesús, estudiante de Ingeniería del Software enfocado en desarrollo full-stack, Data Science y diseño visual."
+  description = "",
+  page = "home",
 } = Astro.props;
+
+const normalizedBase = `${import.meta.env.BASE_URL.replace(/^\/|\/$/g, "")}/`;
+const baseUrl = new URL(normalizedBase, Astro.site ?? Astro.url);
+const currentPath = pathMap[page]?.[lang] ?? pathMap.home[lang];
+const canonical = new URL(currentPath.replace(/^\//, ""), baseUrl).toString();
+const alternates = Object.keys(languages).map((alternateLang) => ({
+  lang: alternateLang,
+  href: new URL(pathMap[page][alternateLang].replace(/^\//, ""), baseUrl).toString(),
+}));
+const xDefault = new URL(pathMap[page].es.replace(/^\//, ""), baseUrl).toString();
 ---
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
 
     <title>{title}</title>
+    <link rel="canonical" href={canonical} />
+    {alternates.map((alternate) => <link rel="alternate" hreflang={alternate.lang} href={alternate.href} />)}
+    <link rel="alternate" hreflang="x-default" href={xDefault} />
     <link rel="icon" href={`${import.meta.env.BASE_URL}/assets/icons/logo-chiissuu.png`} type="image/png" />
   </head>
 

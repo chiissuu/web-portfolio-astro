@@ -1,32 +1,19 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import Navbar from "../components/Navbar.astro";
-import Hero from "../components/Hero.astro";
-import About from "../components/About.astro";
-import Projects from "../components/Projects.astro";
-import Skills from "../components/Skills.astro";
-import Education from "../components/Education.astro";
-import Contact from "../components/Contact.astro";
-import Footer from "../components/Footer.astro";
-import HeroScrollMotion from "../components/react/HeroScrollMotion.jsx";
-import NavbarScrollController from "../components/react/NavbarScrollController.jsx";
+import { withBase } from "../i18n/translations.js";
+
+const target = withBase("/es/");
 ---
 
-<BaseLayout>
-  <Navbar />
-  <NavbarScrollController client:load />
-
-  <HeroScrollMotion client:load>
-    <Hero />
-  </HeroScrollMotion>
-
-  <main>
-    <About />
-    <Projects />
-    <Skills />
-    <Education />
-    <Contact />
-  </main>
-
-  <Footer />
-</BaseLayout>
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="refresh" content={`0; url=${target}`} />
+    <link rel="canonical" href={target} />
+    <title>chiissuu</title>
+  </head>
+  <body>
+    <p><a href={target}>Ir al portfolio</a></p>
+  </body>
+</html>

@@ -1,31 +1,71 @@
+---
+import { languages, pathMap, withBase } from "../i18n/translations.js";
+
+const { lang, t, page = "home" } = Astro.props;
+const homePath = withBase(pathMap.home[lang]);
+
+const portfolioLinks = [
+  { href: `${homePath}#inicio`, label: t.nav.home },
+  { href: `${homePath}#sobre-mi`, label: t.nav.about },
+  { href: `${homePath}#proyectos`, label: t.nav.projects },
+  { href: `${homePath}#skills`, label: t.nav.skills },
+  { href: `${homePath}#formacion`, label: t.nav.education },
+];
+
+const pageLinks = [
+  { href: withBase(pathMap.tools[lang]), label: t.nav.tools, page: "tools" },
+  { href: withBase(pathMap.services[lang]), label: t.nav.services, page: "services" },
+];
+---
+
 <nav id="menu">
   <div class="menu-left">
-    <a class="brand brand-logo" href="#inicio" aria-label="Ir al inicio">
+    <a class="brand brand-logo" href={homePath} aria-label={t.nav.logo}>
       <img src={`${import.meta.env.BASE_URL}/assets/icons/logo-chiissuu.png`} alt="Logo chiissuu">
     </a>
 
     <div class="menu-main">
-      <a class="menu" href="#inicio">Inicio</a>
-      <a class="menu" href="#sobre-mi">Sobre mí</a>
-      <a class="menu" href="#proyectos">Proyectos</a>
-      <a class="menu" href="#skills">Skills</a>
+      <div class="menu-dropdown">
+        <button class="menu menu-dropdown-button" type="button" aria-haspopup="true">
+          {t.nav.portfolio}
+        </button>
+
+        <div class="menu-dropdown-panel">
+          {portfolioLinks.map((link) => <a class="menu-dropdown-link" href={link.href}>{link.label}</a>)}
+        </div>
+      </div>
+
+      {pageLinks.map((link) => <a class:list={["menu", page === link.page && "active"]} href={link.href}>{link.label}</a>)}
     </div>
   </div>
 
-  <button id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+  <button id="menu-toggle" aria-label={t.nav.menu} aria-expanded="false">☰</button>
 
   <div class="menu-links" id="menu-links">
     <div class="menu-mobile-main">
-      <a class="menu" href="#inicio">Inicio</a>
-      <a class="menu" href="#sobre-mi">Sobre mí</a>
-      <a class="menu" href="#proyectos">Proyectos</a>
-      <a class="menu" href="#skills">Skills</a>
+      <p class="menu-mobile-label">{t.nav.portfolio}</p>
+      {portfolioLinks.map((link) => <a class="menu" href={link.href}>{link.label}</a>)}
+      {pageLinks.map((link) => <a class:list={["menu", page === link.page && "active"]} href={link.href}>{link.label}</a>)}
     </div>
 
     <div class="menu-actions">
-      <a class="menu menu-action" href="https://github.com/chiissuu" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a class="menu menu-action menu-action-primary" href={`${import.meta.env.BASE_URL}/docs/cv.pdf`} target="_blank" rel="noopener noreferrer">CV</a>
-      <a class="menu menu-action" href="#contacto">Contacto</a>
+      <a class="menu menu-action" href="https://github.com/chiissuu" target="_blank" rel="noopener noreferrer">{t.nav.github}</a>
+      <a class="menu menu-action menu-action-primary" href={`${import.meta.env.BASE_URL}/docs/cv.pdf`} target="_blank" rel="noopener noreferrer">{t.nav.cv}</a>
+      <a class="menu menu-action" href={`${homePath}#contacto`}>{t.nav.contact}</a>
+
+      <div class="language-switcher" aria-label={t.nav.language}>
+        {Object.entries(languages).map(([code, label]) => (
+          <a
+            class:list={["language-link", code === lang && "active"]}
+            href={withBase(pathMap[page][code])}
+            aria-label={label}
+            aria-current={code === lang ? "page" : undefined}
+          >
+            {code.toUpperCase()}
+            <span>{label}</span>
+          </a>
+        ))}
+      </div>
     </div>
   </div>
 </nav>

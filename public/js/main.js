@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (!menu || !menuToggle || !menuLinks) return;
 
-  const navLinks = Array.from(menu.querySelectorAll('a[href^="#"]'));
+  const navLinks = Array.from(menu.querySelectorAll('a[href*="#"]'));
+  const menuCloseLinks = Array.from(menuLinks.querySelectorAll('a'));
   const observedSections = Array.from(document.querySelectorAll('header[id], section[id]'));
 
   function isLightSection(section) {
@@ -26,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!section || !section.id) return;
 
     navLinks.forEach(function (link) {
-      const linkTarget = link.getAttribute('href');
+      const linkTarget = new URL(link.getAttribute('href'), window.location.href).hash;
       link.classList.toggle('active', linkTarget === `#${section.id}`);
     });
   }
@@ -37,6 +38,8 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function getCurrentSectionByScroll() {
+    if (observedSections.length === 0) return null;
+
     const menuHeight = menu.offsetHeight;
     const referenceLine = window.scrollY + menuHeight + 80;
 
@@ -76,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
     menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   });
 
-  navLinks.forEach(function (link) {
+  menuCloseLinks.forEach(function (link) {
     link.addEventListener('click', function () {
       menuLinks.classList.remove('open');
       menuToggle.setAttribute('aria-expanded', 'false');
@@ -96,51 +99,5 @@ document.addEventListener('DOMContentLoaded', function () {
       behavior: 'smooth'
     });
   });
-});
-
-/* CARRUSEL DE GALERÍA */
-document.addEventListener('DOMContentLoaded', function () {
-  const track = document.querySelector('.carousel-track');
-  const indicatorsContainer = document.querySelector('.carousel-indicators');
-
-  if (!track || !indicatorsContainer) return;
-
-  const slides = Array.from(track.children);
-  let currentIndex = 0;
-
-  slides.forEach(function (_, index) {
-    const button = document.createElement('button');
-
-    if (index === 0) {
-      button.classList.add('active');
-    }
-
-    indicatorsContainer.appendChild(button);
-  });
-
-  const indicators = Array.from(indicatorsContainer.children);
-
-  function moveToSlide(index) {
-    track.style.transform = `translateX(-${index * 100}%)`;
-    currentIndex = index;
-    updateIndicators();
-  }
-
-  function updateIndicators() {
-    indicators.forEach(function (dot, index) {
-      dot.classList.toggle('active', index === currentIndex);
-    });
-  }
-
-  indicators.forEach(function (dot, index) {
-    dot.addEventListener('click', function () {
-      moveToSlide(index);
-    });
-  });
-
-  setInterval(function () {
-    const nextIndex = (currentIndex + 1) % slides.length;
-    moveToSlide(nextIndex);
-  }, 3500);
 });
 

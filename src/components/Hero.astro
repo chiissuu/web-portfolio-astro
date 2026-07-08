@@ -1,28 +1,27 @@
+---
+const { t } = Astro.props;
+---
+
 <header id="inicio" class="header">
   <div class="hero-content">
-    <p class="hero-tag">Software Engineering Student · Data Science · Visual Design</p>
-    <h1>Hola, soy Jesús.</h1>
-    <h2>Construyo proyectos que combinan software, datos y creatividad visual.</h2>
-    <p>
-      Estudiante de Ingeniería del Software en U-TAD, Madrid. Me estoy formando en desarrollo full-stack,
-      bases de datos, Data Science y diseño de experiencias digitales.
-    </p>
+    <p class="hero-tag">{t.hero.tag}</p>
+    <h1>{t.hero.title}</h1>
+    <h2>{t.hero.subtitle}</h2>
+    <p>{t.hero.text}</p>
 
     <div class="hero-buttons">
-      <a href="#proyectos" class="btn primary">Ver proyectos</a>
-      <a href="#contacto" class="btn secondary">Contactar</a>
+      <a href="#proyectos" class="btn primary">{t.hero.primaryCta}</a>
+      <a href="#contacto" class="btn secondary">{t.hero.secondaryCta}</a>
     </div>
   </div>
 
-  <div class="hero-visual" aria-label="Retrato provisional de Jesús">
+  <div class="hero-visual" aria-label={t.hero.imageAlt}>
     <div class="hero-portrait">
-      <img src={`${import.meta.env.BASE_URL}/assets/images/pfp-provisional.png`} alt="Retrato provisional de Jesús">
+      <img src={`${import.meta.env.BASE_URL}/assets/images/pfp-provisional.png`} alt={t.hero.imageAlt}>
     </div>
 
     <div class="hero-visual-caption">
-      <span>Software</span>
-      <span>Data</span>
-      <span>Design</span>
+      {t.hero.caption.map((item) => <span>{item}</span>)}
     </div>
   </div>
 </header>

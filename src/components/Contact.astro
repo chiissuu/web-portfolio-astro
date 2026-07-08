@@ -1,14 +1,16 @@
-<section id="contacto" class="section section-light contact-section">
-      <h2 class="section-title">Contacto</h2>
-      <p>
-        Estoy abierto a colaborar en proyectos, seguir aprendiendo y construir mi perfil dentro del software,
-        los datos y la tecnología.
-      </p>
+---
+const { t } = Astro.props;
+const [emailLabel, githubLabel, linktreeLabel, linkedinLabel] = t.contact.links;
+---
 
-      <div class="contact-links">
-        <a href="mailto:jesusleonromero233@gmail.com">Email</a>
-        <a href="https://github.com/chiissuu" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://linktr.ee/chiissuu" target="_blank" rel="noopener noreferrer">Linktree</a>
-        <a href="#">LinkedIn</a>
-      </div>
-    </section>
+<section id="contacto" class="section section-light contact-section">
+  <h2 class="section-title">{t.contact.title}</h2>
+  <p>{t.contact.text}</p>
+
+  <div class="contact-links">
+    <a href="mailto:jesusleonromero233@gmail.com">{emailLabel}</a>
+    <a href="https://github.com/chiissuu" target="_blank" rel="noopener noreferrer">{githubLabel}</a>
+    <a href="https://linktr.ee/chiissuu" target="_blank" rel="noopener noreferrer">{linktreeLabel}</a>
+    <a href="#">{linkedinLabel}</a>
+  </div>
+</section>
