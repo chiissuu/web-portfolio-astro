@@ -29,12 +29,12 @@ export const translations = {
           "Portfolio web de Jesús, estudiante de Ingeniería del Software enfocado en desarrollo full-stack, Data Science y diseño visual.",
       },
       tools: {
-        title: "Tools | chiissuu",
+        title: "Herramientas | chiissuu",
         description:
           "Herramientas, lenguajes y tecnologías que Jesús utiliza en desarrollo web, datos, bases de datos, diseño y automatización.",
       },
       services: {
-        title: "Services | chiissuu",
+        title: "Servicios | chiissuu",
         description:
           "Servicios y áreas de trabajo de Jesús: desarrollo web, bases de datos, análisis de datos, automatización y diseño visual.",
       },
@@ -43,12 +43,13 @@ export const translations = {
       home: "Inicio",
       about: "Sobre mí",
       projects: "Proyectos",
-      skills: "Skills",
+      skills: "Habilidades",
       education: "Formación",
       contact: "Contacto",
       portfolio: "Portafolio",
-      tools: "Tools",
-      services: "Services",
+      process: "Enfoque",
+      tools: "Habilidades",
+      services: "Servicios",
       github: "GitHub",
       cv: "CV",
       language: "Idioma",
@@ -56,7 +57,7 @@ export const translations = {
       logo: "Ir al inicio",
     },
     hero: {
-      tag: "Software Engineering Student · Data Science · Visual Design",
+      tag: "Ingeniería del Software · Data Science · Diseño visual",
       title: "Hola, soy Jesús.",
       subtitle: "Construyo proyectos que combinan software, datos y creatividad visual.",
       text:
@@ -72,21 +73,19 @@ export const translations = {
         {
           title: "Perfil",
           paragraphs: [
-            "Soy estudiante de Ingeniería del Software en U-TAD. Durante mi formación he trabajado con programación, desarrollo web, bases de datos, arquitectura de software y proyectos full-stack.",
-            "Actualmente estoy orientando mi perfil hacia Data Science y Machine Learning, usando mi base técnica para construir soluciones más analíticas, útiles y escalables.",
+            "Soy estudiante de Ingeniería del Software en U-TAD, con interés en desarrollo full-stack, bases de datos y ciencia de datos. Me gusta crear proyectos funcionales con una presentación visual cuidada.",
           ],
         },
         {
           title: "Lo que me diferencia",
           paragraphs: [
-            "Además de la parte técnica, tengo experiencia en diseño gráfico, creación de banners, portadas, thumbnails y recursos visuales para proyectos personales.",
-            "También vengo de entornos competitivos como los esports, donde desarrollé disciplina, comunicación, consistencia y adaptación bajo presión.",
+            "Combino una base técnica con experiencia en diseño visual, creación de recursos gráficos e interfaces digitales. Esto me permite entender los proyectos tanto desde la lógica como desde la experiencia del usuario.",
           ],
         },
         {
           title: "Diseño gráfico y creatividad",
           paragraphs: [
-            "Además de mi formación técnica, tengo experiencia creando banners, portadas, thumbnails, flyers y recursos visuales para proyectos personales y contenido digital. Esta parte creativa influye en mi forma de entender interfaces, identidad visual y comunicación.",
+            "Además del desarrollo, he trabajado en banners, portadas, thumbnails, flyers y recursos visuales para proyectos personales y contenido digital. Esta parte creativa influye en mi forma de diseñar interfaces y comunicar ideas.",
           ],
           link: {
             text: "Ver archivo de diseño gráfico",
@@ -96,8 +95,7 @@ export const translations = {
       ],
       competitive: {
         title: "Competitividad y mentalidad",
-        intro:
-          "Una parte importante de mi forma de trabajar viene de mi experiencia compitiendo en esports como Overwatch, Counter-Strike,",
+        intro: "Mi experiencia en entornos competitivos me ha ayudado a desarrollar constancia, comunicación, análisis bajo presión y mejora continua.",
         links: [
           {
             text: "Fortnite PC",
@@ -112,49 +110,65 @@ export const translations = {
             href: "https://github.com/chiissuu/chiissuu/blob/main/assets/merget1s4.jpg",
           },
         ],
-        outro: "y otros títulos competitivos.",
+        outro: "",
         paragraphs: [
-          "Esta etapa me ayudó a desarrollar disciplina, constancia, control emocional, comunicación en equipo y capacidad de adaptación en situaciones de presión.",
-          "Intento aplicar esa mentalidad a mis proyectos: mejorar de forma continua, cuidar los detalles, aceptar feedback y contribuir a un entorno de equipo donde todos puedan rendir mejor.",
+          "Intento aplicar esa mentalidad a cada proyecto técnico y creativo, cuidando los detalles y aceptando feedback para mejorar de forma constante.",
         ],
       },
     },
     projects: {
-      title: "Proyectos destacados (añadir más adelante)",
+      title: "Proyectos destacados",
       intro:
-        "En esta sección se exponen 3 de los proyectos que quiero destacar para mi portfolio, cada uno de ellos expone una faceta de mis especialidades.",
+        "Una selección de proyectos que representan mi perfil entre desarrollo web, ciencia de datos y diseño visual.",
       items: [
         {
-          title: "Proyecto Full-stack (Automatizacion de la empresa GFLOW)",
+          title: "Web corporativa G-FLOW",
+          visualTitle: "Web G-FLOW",
+          category: "FULL-STACK",
           description:
-            "Aplicación web con frontend, backend y base de datos. Ideal para mostrar tu capacidad de construir un sistema completo.",
+            "Aplicación web corporativa con estructura de páginas, componentes reutilizables y enfoque en presentación profesional de servicios industriales.",
           image: "/assets/projects/project-1.png",
-          alt: "Capturas del proyecto 1",
-          tags: ["HTML", "CSS", "JavaScript", "MySQL"],
-          links: ["GitHub", "Demo"],
+          alt: "Placeholder visual del proyecto Web corporativa G-FLOW",
+          tags: ["HTML", "CSS", "JavaScript", "UI"],
+          links: [
+            { label: "GitHub", href: "" },
+            { label: "Demo", href: "" },
+          ],
         },
         {
-          title: "Proyecto Data Science (Hacer un proyecto sobre la prediccion de algo (mundial??))",
+          title: "Dashboard de análisis de datos",
+          visualTitle: "Dashboard de datos",
+          category: "DATA SCIENCE",
           description:
-            "Análisis de datos con visualizaciones, limpieza de datos y conclusiones. Perfecto para tu enfoque futuro.",
+            "Proyecto orientado a limpieza, visualización y análisis de datos para extraer conclusiones útiles a partir de información estructurada.",
           image: "/assets/projects/project-2.png",
-          alt: "Capturas del proyecto 2",
+          alt: "Placeholder visual del proyecto Dashboard de análisis de datos",
           tags: ["Python", "Pandas", "Matplotlib", "Scikit-learn"],
-          links: ["GitHub", "Notebook"],
+          links: [
+            { label: "GitHub", href: "" },
+            { label: "Notebook", href: "" },
+          ],
         },
         {
-          title: "Proyecto Visual / UI o Proyecto Delivery y modificarlo para añdirle una Interfaz Grafica con diseño",
+          title: "Sistema visual para interfaces",
+          visualTitle: "Sistema visual UI",
+          category: "VISUAL / UI",
           description:
-            "Galería o landing page enfocada en diseño visual, identidad, creatividad y experiencia de usuario.",
+            "Propuesta visual centrada en identidad, composición, recursos gráficos y experiencia de usuario para una interfaz digital.",
           image: "/assets/projects/project-3.png",
-          alt: "Capturas del proyecto 3",
+          alt: "Placeholder visual del proyecto Sistema visual para interfaces",
           tags: ["Diseño", "UX/UI", "CSS", "Branding"],
-          links: ["Ver diseño", "Archivo"],
+          links: [
+            { label: "Ver diseño", href: "" },
+            { label: "Archivo", href: "" },
+          ],
         },
       ],
     },
     skills: {
-      title: "Skills técnicas",
+      title: "Habilidades técnicas",
+      intro:
+        "Tecnologías y herramientas que utilizo en proyectos de desarrollo, datos y diseño visual.",
       groups: [
         {
           title: "Lenguajes",
@@ -222,13 +236,21 @@ export const translations = {
     },
     education: {
       title: "Formación",
-      degree: "Grado en Ingeniería del Software con Mención en Ingeniería de Datos",
+      degree: "Grado en Ingeniería del Software",
+      subtitle: "Mención en Ingeniería de Datos · U-TAD, Madrid",
       paragraphs: [
-        "Actualmente curso el Grado en Ingeniería del Software en U-tad, Madrid, con mención en Ingeniería de Datos. Esta formación me está proporcionando una base sólida en desarrollo de software, programación, algoritmia, estructuras de datos, sistemas operativos, redes, bases de datos, arquitectura de software y diseño de soluciones tecnológicas.",
-        "A lo largo del grado he trabajado asignaturas orientadas tanto a la construcción de software como al análisis y tratamiento de datos, incluyendo programación orientada a objetos, análisis y diseño de algoritmos, bases de datos, diseño de software, probabilidad y estadística, sistemas operativos y proyectos aplicados de ingeniería.",
-        "Mi especialización en Ingeniería de Datos refuerza este perfil técnico hacia áreas como arquitecturas de datos, sistemas distribuidos, procesamiento de grandes volúmenes de información, aprendizaje automático, visualización de datos e inteligencia artificial.",
+        "Actualmente curso Ingeniería del Software en U-TAD, Madrid, con mención en Ingeniería de Datos.",
+        "Mi formación combina desarrollo de software, bases de datos, algoritmia, arquitectura, sistemas y análisis de datos.",
+      ],
+      highlights: [
+        "Desarrollo de software y proyectos full-stack",
+        "Bases de datos, estructuras de datos y diseño de sistemas",
+        "Probabilidad, estadística, visualización y aprendizaje automático",
+        "Arquitecturas de datos, sistemas distribuidos e inteligencia artificial",
       ],
       languagesTitle: "Idiomas",
+      languagesDescription:
+        "Idiomas que utilizo en contextos académicos, técnicos y de documentación.",
       languages: [
         ["Español", "Nativo"],
         ["Inglés", "C1"],
@@ -238,16 +260,28 @@ export const translations = {
     contact: {
       title: "Contacto",
       text:
-        "Estoy abierto a colaborar en proyectos, seguir aprendiendo y construir mi perfil dentro del software, los datos y la tecnología.",
-      links: ["Email", "GitHub", "Linktree", "LinkedIn"],
+        "Estoy abierto a colaborar en proyectos, seguir aprendiendo y construir soluciones digitales con enfoque técnico y visual.",
+      cta: "¿Tienes una idea, propuesta o proyecto?",
+      links: ["Email", "GitHub", "LinkedIn", "CV"],
     },
     footer: {
       text: "© 2026 Jesús León Romero Atienza · chiissuu",
       backToTop: "Volver arriba",
+      links: ["GitHub", "LinkedIn", "Contacto"],
+    },
+    process: {
+      title: "Enfoque",
+      intro: "Una forma de trabajar simple: entender el problema, diseñar con intención, construir con criterio y mejorar con feedback.",
+      steps: [
+        ["01", "Análisis", "Definir objetivos, contexto y requisitos antes de construir."],
+        ["02", "Diseño visual", "Ordenar jerarquía, interfaz y comunicación para que el proyecto sea claro."],
+        ["03", "Desarrollo", "Crear soluciones funcionales, mantenibles y conectadas con datos reales."],
+        ["04", "Mejora", "Iterar, aprender y pulir detalles a partir de pruebas y feedback."],
+      ],
     },
     toolsPage: {
       eyebrow: "Stack y herramientas",
-      title: "Tools",
+      title: "Herramientas",
       intro:
         "Estas son las tecnologías y herramientas que uso o estoy incorporando para construir proyectos de software, datos, bases de datos y diseño visual.",
       sections: [
@@ -270,29 +304,24 @@ export const translations = {
     },
     servicesPage: {
       eyebrow: "Áreas de trabajo",
-      title: "Services",
+      title: "Servicios",
       intro:
-        "Servicios y tipos de proyectos en los que puedo aportar desde mi perfil de software, datos, diseño y mentalidad de mejora continua.",
+        "Áreas en las que puedo aportar valor combinando desarrollo, datos y diseño visual.",
       services: [
         {
-          title: "Desarrollo web y full-stack",
+          title: "Desarrollo web",
           text:
-            "Construcción de aplicaciones web con frontend, backend y base de datos, cuidando estructura, mantenibilidad y experiencia de usuario.",
+            "Creación de interfaces, landing pages y estructuras web funcionales con enfoque responsive y visual cuidado.",
         },
         {
-          title: "Bases de datos y automatización",
+          title: "Proyectos de datos",
           text:
-            "Modelado de datos, consultas, integración de procesos y automatización de tareas para hacer sistemas más claros y útiles.",
+            "Limpieza, análisis y visualización de datos para transformar información en conclusiones útiles.",
         },
         {
-          title: "Data Science y visualización",
+          title: "Diseño visual / UI",
           text:
-            "Limpieza, análisis y visualización de datos para transformar información en conclusiones comprensibles.",
-        },
-        {
-          title: "Diseño visual para proyectos digitales",
-          text:
-            "Creación de recursos visuales, interfaces y piezas gráficas que ayuden a comunicar mejor una idea o producto.",
+            "Diseño de recursos gráficos, composición visual e interfaces digitales con atención a jerarquía y experiencia de usuario.",
         },
       ],
     },
@@ -323,7 +352,8 @@ export const translations = {
       education: "Education",
       contact: "Contact",
       portfolio: "Portfolio",
-      tools: "Tools",
+      process: "Process",
+      tools: "Skills",
       services: "Services",
       github: "GitHub",
       cv: "CV",
@@ -396,41 +426,58 @@ export const translations = {
       },
     },
     projects: {
-      title: "Featured projects (to be added later)",
+      title: "Featured projects",
       intro:
-        "This section presents three projects I want to highlight in my portfolio, each one showing a different side of my specialties.",
+        "A selection of projects that represent my profile across web development, data science, and visual design.",
       items: [
         {
-          title: "Full-stack project (GFLOW company automation)",
+          title: "G-FLOW corporate website",
+          visualTitle: "G-FLOW web",
+          category: "FULL-STACK",
           description:
-            "A web application with frontend, backend, and database. A strong way to show the ability to build a complete system.",
+            "Corporate web application with page structure, reusable components, and a professional presentation of industrial services.",
           image: "/assets/projects/project-1.png",
-          alt: "Screenshots from project 1",
-          tags: ["HTML", "CSS", "JavaScript", "MySQL"],
-          links: ["GitHub", "Demo"],
+          alt: "Visual placeholder for the G-FLOW corporate website project",
+          tags: ["HTML", "CSS", "JavaScript", "UI"],
+          links: [
+            { label: "GitHub", href: "" },
+            { label: "Demo", href: "" },
+          ],
         },
         {
-          title: "Data Science project (prediction project idea, possibly World Cup related)",
+          title: "Data analysis dashboard",
+          visualTitle: "Data dashboard",
+          category: "DATA SCIENCE",
           description:
-            "Data analysis with visualizations, data cleaning, and conclusions. A good fit for my future focus.",
+            "Project focused on data cleaning, visualization, and analysis to extract useful conclusions from structured information.",
           image: "/assets/projects/project-2.png",
-          alt: "Screenshots from project 2",
+          alt: "Visual placeholder for the data analysis dashboard project",
           tags: ["Python", "Pandas", "Matplotlib", "Scikit-learn"],
-          links: ["GitHub", "Notebook"],
+          links: [
+            { label: "GitHub", href: "" },
+            { label: "Notebook", href: "" },
+          ],
         },
         {
-          title: "Visual / UI project or Delivery project redesigned with a graphical interface",
+          title: "Visual system for interfaces",
+          visualTitle: "Visual UI system",
+          category: "VISUAL / UI",
           description:
-            "A gallery or landing page focused on visual design, identity, creativity, and user experience.",
+            "Visual proposal focused on identity, composition, graphic assets, and user experience for a digital interface.",
           image: "/assets/projects/project-3.png",
-          alt: "Screenshots from project 3",
+          alt: "Visual placeholder for the visual system for interfaces project",
           tags: ["Design", "UX/UI", "CSS", "Branding"],
-          links: ["View design", "Archive"],
+          links: [
+            { label: "View design", href: "" },
+            { label: "Archive", href: "" },
+          ],
         },
       ],
     },
     skills: {
       title: "Technical skills",
+      intro:
+        "Technologies and tools I use across development, data, and visual design projects.",
       groups: [
         {
           title: "Languages",
@@ -499,12 +546,20 @@ export const translations = {
     education: {
       title: "Education",
       degree: "Bachelor's Degree in Software Engineering with a specialization in Data Engineering",
+      subtitle: "Data Engineering specialization · U-TAD, Madrid",
       paragraphs: [
-        "I am currently studying Software Engineering at U-tad in Madrid, with a specialization in Data Engineering. This education is giving me a strong foundation in software development, programming, algorithms, data structures, operating systems, networks, databases, software architecture, and the design of technological solutions.",
-        "Throughout the degree, I have worked on subjects focused both on building software and on analyzing and processing data, including object-oriented programming, algorithm analysis and design, databases, software design, probability and statistics, operating systems, and applied engineering projects.",
-        "My specialization in Data Engineering strengthens this technical profile toward areas such as data architectures, distributed systems, large-scale information processing, machine learning, data visualization, and artificial intelligence.",
+        "I am currently studying Software Engineering at U-TAD in Madrid, with a specialization in Data Engineering.",
+        "My training combines software development, databases, algorithms, architecture, systems, and data analysis.",
+      ],
+      highlights: [
+        "Software development and full-stack projects",
+        "Databases, data structures, and system design",
+        "Probability, statistics, visualization, and machine learning",
+        "Data architectures, distributed systems, and artificial intelligence",
       ],
       languagesTitle: "Languages",
+      languagesDescription:
+        "Languages I use in academic, technical, and documentation contexts.",
       languages: [
         ["Spanish", "Native"],
         ["English", "C1"],
@@ -514,12 +569,24 @@ export const translations = {
     contact: {
       title: "Contact",
       text:
-        "I am open to collaborating on projects, continuing to learn, and building my profile within software, data, and technology.",
-      links: ["Email", "GitHub", "Linktree", "LinkedIn"],
+        "I am open to collaborating on projects, continuing to learn, and building digital solutions with a technical and visual approach.",
+      cta: "Do you have an idea, proposal, or project?",
+      links: ["Email", "GitHub", "LinkedIn", "CV"],
     },
     footer: {
       text: "© 2026 Jesús León Romero Atienza · chiissuu",
       backToTop: "Back to top",
+      links: ["GitHub", "LinkedIn", "Contact"],
+    },
+    process: {
+      title: "Process",
+      intro: "A simple way of working: understand the problem, design with intent, build with criteria, and improve through feedback.",
+      steps: [
+        ["01", "Analysis", "Define goals, context, and requirements before building."],
+        ["02", "Visual design", "Organize hierarchy, interface, and communication so the project is clear."],
+        ["03", "Development", "Build functional, maintainable solutions connected to real data."],
+        ["04", "Improvement", "Iterate, learn, and refine details through testing and feedback."],
+      ],
     },
     toolsPage: {
       eyebrow: "Stack and tools",
@@ -548,27 +615,22 @@ export const translations = {
       eyebrow: "Work areas",
       title: "Services",
       intro:
-        "Services and project types where I can contribute through software, data, design, and a continuous-improvement mindset.",
+        "Areas where I can add value by combining development, data, and visual design.",
       services: [
         {
-          title: "Web and full-stack development",
+          title: "Web development",
           text:
-            "Building web applications with frontend, backend, and databases while keeping structure, maintainability, and user experience in mind.",
+            "Creating interfaces, landing pages, and functional web structures with a responsive approach and careful visual design.",
         },
         {
-          title: "Databases and automation",
+          title: "Data projects",
           text:
-            "Data modeling, queries, process integration, and task automation to make systems clearer and more useful.",
+            "Cleaning, analyzing, and visualizing data to turn information into useful conclusions.",
         },
         {
-          title: "Data Science and visualization",
+          title: "Visual design / UI",
           text:
-            "Data cleaning, analysis, and visualization to turn information into understandable conclusions.",
-        },
-        {
-          title: "Visual design for digital projects",
-          text:
-            "Creating visual assets, interfaces, and graphic pieces that help communicate an idea or product more effectively.",
+            "Designing graphic assets, visual composition, and digital interfaces with attention to hierarchy and user experience.",
         },
       ],
     },
@@ -576,8 +638,8 @@ export const translations = {
 };
 
 export function getLangFromUrl(url) {
-  const [, lang] = url.pathname.split("/");
-  return lang in translations ? lang : defaultLang;
+  const lang = url.pathname.split("/").find((segment) => segment in translations);
+  return lang ?? defaultLang;
 }
 
 export function withBase(path) {

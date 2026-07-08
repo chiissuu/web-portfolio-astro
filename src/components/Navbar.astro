@@ -8,13 +8,13 @@ const portfolioLinks = [
   { href: `${homePath}#inicio`, label: t.nav.home },
   { href: `${homePath}#sobre-mi`, label: t.nav.about },
   { href: `${homePath}#proyectos`, label: t.nav.projects },
-  { href: `${homePath}#skills`, label: t.nav.skills },
+  { href: `${homePath}#enfoque`, label: t.nav.process },
   { href: `${homePath}#formacion`, label: t.nav.education },
 ];
 
 const pageLinks = [
-  { href: withBase(pathMap.tools[lang]), label: t.nav.tools, page: "tools" },
-  { href: withBase(pathMap.services[lang]), label: t.nav.services, page: "services" },
+  { href: `${homePath}#skills`, label: t.nav.tools, page: "skills" },
+  { href: `${homePath}#servicios`, label: t.nav.services, page: "services" },
 ];
 ---
 

@@ -1,0 +1,17 @@
+---
+const { t } = Astro.props;
+---
+
+<section id="servicios" class="section section-light services-section">
+  <h2 class="section-title centered">{t.servicesPage.title}</h2>
+  <p class="section-intro centered">{t.servicesPage.intro}</p>
+
+  <div class="services-grid">
+    {t.servicesPage.services.map((service) => (
+      <article class="text-card service-card">
+        <h3>{service.title}</h3>
+        <p>{service.text}</p>
+      </article>
+    ))}
+  </div>
+</section>

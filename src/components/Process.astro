@@ -1,0 +1,18 @@
+---
+const { t } = Astro.props;
+---
+
+<section id="enfoque" class="section section-light process-section">
+  <h2 class="section-title centered">{t.process.title}</h2>
+  <p class="section-intro centered">{t.process.intro}</p>
+
+  <div class="process-grid">
+    {t.process.steps.map(([number, title, text]) => (
+      <article class="process-card">
+        <span>{number}</span>
+        <h3>{title}</h3>
+        <p>{text}</p>
+      </article>
+    ))}
+  </div>
+</section>

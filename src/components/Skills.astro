@@ -3,7 +3,8 @@ const { t } = Astro.props;
 ---
 
 <section id="skills" class="section section-light">
-  <h2 class="section-title">{t.skills.title}</h2>
+  <h2 class="section-title centered">{t.skills.title}</h2>
+  <p class="section-intro centered">{t.skills.intro}</p>
 
   <div class="skills-grid">
     {t.skills.groups.map((group) => (

@@ -5,11 +5,15 @@ import Hero from "../../components/Hero.astro";
 import About from "../../components/About.astro";
 import Projects from "../../components/Projects.astro";
 import Skills from "../../components/Skills.astro";
+import Process from "../../components/Process.astro";
+import ServicesSection from "../../components/ServicesSection.astro";
 import Education from "../../components/Education.astro";
 import Contact from "../../components/Contact.astro";
 import Footer from "../../components/Footer.astro";
-import HeroScrollMotion from "../../components/react/HeroScrollMotion.jsx";
-import NavbarScrollController from "../../components/react/NavbarScrollController.jsx";
+import SectionDivider from "../../components/SectionDivider.astro";
+// React desactivado temporalmente durante el rediseño.
+// import HeroScrollMotion from "../../components/react/HeroScrollMotion.jsx";
+// import NavbarScrollController from "../../components/react/NavbarScrollController.jsx";
 import { translations } from "../../i18n/translations.js";
 
 const lang = "es";
@@ -18,17 +22,24 @@ const t = translations[lang];
 
 <BaseLayout lang={lang} title={t.seo.home.title} description={t.seo.home.description} page="home">
   <Navbar lang={lang} t={t} page="home" />
-  <NavbarScrollController client:load />
+  <!-- React desactivado temporalmente: <NavbarScrollController client:load /> -->
 
-  <HeroScrollMotion client:load>
-    <Hero t={t} />
-  </HeroScrollMotion>
+  <!-- React desactivado temporalmente: HeroScrollMotion -->
+  <Hero t={t} />
 
   <main>
+    <SectionDivider variant="tilt" tone="light" flip />
     <About t={t} />
-    <Projects t={t} />
+    <SectionDivider variant="tilt" tone="surface" flip />
     <Skills t={t} />
+    <SectionDivider variant="triangleNegative" tone="darkFromSurface" />
+    <Projects t={t} />
+    <SectionDivider variant="waves" tone="light" />
+    <ServicesSection t={t} />
+    <Process t={t} />
+    <SectionDivider variant="tilt" tone="dark" flip />
     <Education t={t} />
+    <SectionDivider variant="tilt" tone="surfaceOnDark" flip />
     <Contact t={t} />
   </main>
 

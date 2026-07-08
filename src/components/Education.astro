@@ -8,12 +8,18 @@ const { t } = Astro.props;
   <div class="education-layout">
     <article class="text-card education-main-card">
       <h3>{t.education.degree}</h3>
+      <p class="education-subtitle">{t.education.subtitle}</p>
 
       {t.education.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+
+      <ul class="education-highlights">
+        {t.education.highlights.map((item) => <li>{item}</li>)}
+      </ul>
     </article>
 
     <article class="text-card education-languages-card">
       <h3>{t.education.languagesTitle}</h3>
+      <p>{t.education.languagesDescription}</p>
 
       <ul class="language-list">
         {t.education.languages.map(([name, level]) => (

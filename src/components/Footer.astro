@@ -1,8 +1,18 @@
 ---
+import { getLangFromUrl, pathMap, withBase } from "../i18n/translations.js";
+
 const { t } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const contactHref = `${withBase(pathMap.home[lang])}#contacto`;
 ---
 
 <footer class="footer">
   <p>{t.footer.text}</p>
-  <button id="botonarriba">{t.footer.backToTop}</button>
+
+  <nav class="footer-links" aria-label="Footer">
+    <a href="https://github.com/chiissuu" target="_blank" rel="noopener noreferrer">{t.footer.links[0]}</a>
+    <span class="footer-link-pending" aria-label={`${t.footer.links[1]} pendiente`}>{t.footer.links[1]}</span>
+    <a href={contactHref}>{t.footer.links[2]}</a>
+    <button id="botonarriba">{t.footer.backToTop}</button>
+  </nav>
 </footer>

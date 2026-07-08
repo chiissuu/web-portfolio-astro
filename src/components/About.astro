@@ -1,6 +1,5 @@
 ---
 const { t } = Astro.props;
-const [firstLink, secondLink, thirdLink] = t.about.competitive.links;
 ---
 
 <section id="sobre-mi" class="section section-light">
@@ -25,10 +24,8 @@ const [firstLink, secondLink, thirdLink] = t.about.competitive.links;
       <h3>{t.about.competitive.title}</h3>
 
       <p>
-        {t.about.competitive.intro}{" "}
-        <a class="text-link-inline" href={firstLink.href} target="_blank" rel="noopener noreferrer">{firstLink.text}</a>,{" "}
-        <a class="text-link-inline" href={secondLink.href} target="_blank" rel="noopener noreferrer">{secondLink.text}</a>,{" "}
-        <a class="text-link-inline" href={thirdLink.href} target="_blank" rel="noopener noreferrer">{thirdLink.text}</a>{" "}
+        {t.about.competitive.intro}
+        {" "}
         {t.about.competitive.outro}
       </p>
 

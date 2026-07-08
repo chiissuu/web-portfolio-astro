@@ -3,7 +3,8 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Navbar from "../../components/Navbar.astro";
 import ToolPage from "../../components/ToolPage.astro";
 import Footer from "../../components/Footer.astro";
-import NavbarScrollController from "../../components/react/NavbarScrollController.jsx";
+// React desactivado temporalmente durante el rediseño.
+// import NavbarScrollController from "../../components/react/NavbarScrollController.jsx";
 import { translations } from "../../i18n/translations.js";
 
 const lang = "es";
@@ -12,7 +13,7 @@ const t = translations[lang];
 
 <BaseLayout lang={lang} title={t.seo.tools.title} description={t.seo.tools.description} page="tools">
   <Navbar lang={lang} t={t} page="tools" />
-  <NavbarScrollController client:load />
+  <!-- React desactivado temporalmente: <NavbarScrollController client:load /> -->
   <ToolPage t={t} />
   <Footer t={t} />
 </BaseLayout>
